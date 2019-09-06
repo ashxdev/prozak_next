@@ -12,25 +12,15 @@ class ProzakApp extends App {
     return (
       <Layout>
         <Head>
-          <style amp-custom jsx>
+          <style amp-custom jsx global>
             {globalStyles}
           </style>
           <script
             async
-            key="amp-timeago"
-            custom-element="amp-timeago"
-            src="https://cdn.ampproject.org/v0/amp-timeago-0.1.js"
+            custom-element="amp-carousel"
+            src="https://cdn.ampproject.org/v0/amp-carousel-0.2.js"
           />
         </Head>
-        <p>Some time: {new Date().toJSON()}</p>
-        <amp-timeago
-          width="0"
-          height="15"
-          datetime={new Date().toJSON()}
-          layout="responsive"
-        >
-          .
-        </amp-timeago>
         <Component {...pageProps} />
       </Layout>
     )

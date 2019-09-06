@@ -1,17 +1,22 @@
-import { useRouter } from "next/router"
-import withPostLayout from "../../components/layouts/PostLayout"
+import React, { Component } from "react"
+import { inject, observer } from "mobx-react"
 
-const Page = () => {
-  const router = useRouter()
+@inject("postStore")
+@observer
+class Post extends Component {
+  static async getInitialProps({ mobxStore, query }) {
+    await mobxStore.postStore.fetch(query.id)
+    return { post: mobxStore.postStore.post }
+  }
 
-  console.log(router.pathname)
-
-  return (
-    <div>
-      <h1>{router.query.id}</h1>
-      <p>This is the blog post content.</p>
-    </div>
-  )
+  render() {
+    const { post } = this.props
+    return (
+      <div>
+        <h1>{post.title}</h1>
+      </div>
+    )
+  }
 }
 
-export default withPostLayout(Page)
+export default Post

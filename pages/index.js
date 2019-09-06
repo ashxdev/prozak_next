@@ -1,6 +1,5 @@
-import withHomeLayout from "../components/layouts/HomeLayout"
 import Link from "next/link"
-
+import AmpCarousel from "../components/amp/carousel/AmpCarousel"
 export const config = { amp: true }
 
 const PostLink = props => (
@@ -11,20 +10,41 @@ const PostLink = props => (
   </li>
 )
 
-const Page = () => (
+const Page = ({ data }) => (
   <div>
     <PostLink id="hello-nextjs" />
     <PostLink id="learn-nextjs" />
     <PostLink id="deploy-nextjs" />
-    <p>Hello Next.js</p>
-    <amp-img
-      class="grey-placeholder op"
-      src="https://unsplash.it/500/400"
-      width="500"
-      height="300"
-      layout="responsive"
-    />
+    <AmpCarousel data={data} />
   </div>
 )
 
-export default withHomeLayout(Page)
+Page.getInitialProps = async function(context) {
+  const data = [
+    {
+      id: "1",
+      postUrl: "",
+      title: "test title",
+      description: "test desc",
+      imgSrc: "https://unsplash.it/500/400",
+    },
+    {
+      id: "2",
+      postUrl: "",
+      title: "test title2",
+      description: "test desc3",
+      imgSrc: "https://unsplash.it/500/400",
+    },
+    {
+      id: "3",
+      postUrl: "",
+      title: "test titl3",
+      description: "test desc3",
+      imgSrc: "https://unsplash.it/500/400",
+    },
+  ]
+
+  return { data }
+}
+
+export default Page

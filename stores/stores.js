@@ -8,16 +8,16 @@ useStaticRendering(isServer)
 
 let store = null
 
-export default function initializeStore(initialData = { postStore: {} }) {
+export default function initializeStore() {
   if (isServer) {
     return {
-      postStore: new PostStore(initialData.postStore),
+      postStore: new PostStore(),
       uiStore: new UIStore(),
     }
   }
   if (store === null) {
     store = {
-      postStore: new PostStore(initialData.postStore),
+      postStore: new PostStore(),
       uiStore: new UIStore(),
     }
   }

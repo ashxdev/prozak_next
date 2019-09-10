@@ -1,6 +1,7 @@
 import Link from "next/link"
 import AmpCarousel from "../components/amp/carousel/AmpCarousel"
 export const config = { amp: true }
+import "@formatjs/intl-relativetimeformat/polyfill"
 
 const PostLink = props => (
   <li>
@@ -10,14 +11,19 @@ const PostLink = props => (
   </li>
 )
 
-const Page = ({ data }) => (
-  <div>
-    <PostLink id="hello-nextjs" />
-    <PostLink id="learn-nextjs" />
-    <PostLink id="deploy-nextjs" />
-    <AmpCarousel data={data} />
-  </div>
-)
+const Page = ({ data }) => {
+  const rtf1 = new Intl.RelativeTimeFormat("en", { style: "narrow" })
+  console.log(rtf1.format(3, "quarter"))
+
+  return (
+    <div>
+      <PostLink id="hello-nextjs" />
+      <PostLink id="learn-nextjs" />
+      <PostLink id="deploy-nextjs" />
+      <AmpCarousel data={data} />
+    </div>
+  )
+}
 
 Page.getInitialProps = async function(context) {
   const data = [

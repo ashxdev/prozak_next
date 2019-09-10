@@ -12,7 +12,6 @@ class PostStore {
   constructor() {
     this.ApiService = new ApiService("posts")
     this.apiMethods = this.ApiService.apiMethods
-    console.log(this.apiMethods)
   }
 
   async fetch(id) {

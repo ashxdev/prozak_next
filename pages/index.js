@@ -2,6 +2,7 @@ import Link from 'next/link'
 import AmpCarousel from '../components/amp/carousel/AmpCarousel'
 import AmpCards from '../components/amp/AmpCards/'
 export const config = { amp: true }
+import "@formatjs/intl-relativetimeformat/polyfill"
 
 const PostLink = props => (
   <li>
@@ -11,17 +12,21 @@ const PostLink = props => (
   </li>
 )
 
-const Page = ({ data, cards }) => (
-  <div>
-    <div className="avatar">avatar class</div>
-    <PostLink id="hello-nextjs" />
-    <PostLink id="learn-nextjs" />
-    <PostLink id="deploy-nextjs" />
-    <AmpCarousel data={data} />
+const Page = ({ data }) => {
+  const rtf1 = new Intl.RelativeTimeFormat("en", { style: "narrow" })
+  console.log(rtf1.format(3, "quarter"))
 
-    <AmpCards cards={cards} />
-  </div>
-)
+  return (
+    <div>
+      <PostLink id="hello-nextjs" />
+      <PostLink id="learn-nextjs" />
+      <PostLink id="deploy-nextjs" />
+      <AmpCarousel data={data} />
+      <AmpCards cards={cards} />
+    </div>
+  )
+}
+
 
 Page.getInitialProps = async function(context) {
   const cards = [

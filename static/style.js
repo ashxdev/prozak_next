@@ -371,6 +371,10 @@ canvas {
   float: right
 }
 
+.clear {
+  clear: both
+}
+
 .fit {
   max-width: 100%
 }
@@ -1768,13 +1772,34 @@ p {
   opacity: 1
 }
 
-@media (max-width:100rem) {
+@media (max-width:100rem) and (min-width:40rem) {
   .land-see-hero-left,.land-see-hero-right {
     display: none
   }
 }
 
 @media (max-width:40rem) {
+  .eagle-item {
+    border-top: 0;
+    position: relative;
+    margin-top: 14px;
+    padding-top: 12px;
+  }
+
+ .eagle-item::before {
+    background-color: #dbdbdb;
+    border-right: 8px solid #fff;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    content: '';
+    height: 1px;
+    left: 0;
+    position: absolute;
+    top: 0;
+    width: 100%;
+  }
+
   .land-see-hero-button,.land-see-hero-caption,.land-see-hero-title {
     color: #021425
   }

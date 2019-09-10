@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import AmpCarousel from '../components/amp/carousel/AmpCarousel'
 import AmpCards from '../components/amp/AmpCards/'
+import AmpEagle from '../components/amp/AmpEagle/'
 export const config = { amp: true }
 
 const PostLink = props => (
@@ -19,16 +20,18 @@ const Page = ({ data, cards }) => (
     <PostLink id="deploy-nextjs" />
     <AmpCarousel data={data} />
 
-    <AmpCards cards={cards} />
+    {/* <AmpCards cards={cards} /> */}
+    <AmpEagle items={cards} />
   </div>
 )
 
 Page.getInitialProps = async function(context) {
   const cards = [
     {
-      title: 'Office Tour: Studio Serif',
+      title: 'Office Tour: Studio Serif more text here to wrap',
       image: 'studio-310px',
       category: 'Design',
+      timeStamp: 1568013919241,
       text:
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
@@ -36,6 +39,7 @@ Page.getInitialProps = async function(context) {
       title: 'Office Tour: Studio Serif',
       image: 'studio-310px',
       category: 'Design',
+      timeStamp: 1568013929241,
       text:
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },

@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import { useEffect, useState } from 'react'
+import RelativeTime from './RelativeTime'
 
 const eagleItem = ({ item }) => {
   return (
@@ -32,9 +32,8 @@ const eagleItem = ({ item }) => {
         <p className="ampstart-caption pt1 pb3">{item.text}</p>
 
         <span>
-          <i className="main-color material-icons land-see-hero-caption">
-            access_time
-          </i>
+          <i className="main-color material-icons land-see-hero-caption"></i>
+          <RelativeTime timeStamp={item.timeStamp} />
         </span>
       </div>
     </div>

@@ -1,7 +1,9 @@
-import React, { Component } from "react"
-import { inject, observer } from "mobx-react"
+import React, { Component } from 'react'
+import { inject, observer } from 'mobx-react'
+import AmpPost from '../../components/amp/post'
+import Layout from '../../components/layouts/Layout'
 
-@inject("postStore")
+@inject('postStore')
 @observer
 class Post extends Component {
   static async getInitialProps({ mobxStore, query }) {
@@ -12,9 +14,9 @@ class Post extends Component {
   render() {
     const { post } = this.props
     return (
-      <div>
-        <h1>{post.title}</h1>
-      </div>
+      <Layout>
+        <AmpPost post={post} />
+      </Layout>
     )
   }
 }

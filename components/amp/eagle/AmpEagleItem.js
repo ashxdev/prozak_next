@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import RelativeTime from './RelativeTime'
+import RelativeTime from '../shared/RelativeTime'
 
 const eagleItem = ({ item }) => {
   return (
@@ -31,10 +31,7 @@ const eagleItem = ({ item }) => {
 
         <p className="ampstart-caption pt1 pb3">{item.text}</p>
 
-        <span>
-          <i className="main-color material-icons land-see-hero-caption"></i>
-          <RelativeTime timeStamp={item.timeStamp} />
-        </span>
+        <RelativeTime timeStamp={item.timeStamp} />
       </div>
     </div>
   )

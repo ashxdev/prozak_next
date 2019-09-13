@@ -1,7 +1,8 @@
 import Link from 'next/link'
-import AmpCarousel from '../components/amp/carousel/AmpCarousel'
-import AmpCards from '../components/amp/AmpCards/'
-import AmpEagle from '../components/amp/AmpEagle/'
+import AmpCarousel from '../components/amp/carousel'
+import AmpCards from '../components/amp/cards'
+import AmpEagle from '../components/amp/eagle'
+import Layout from '../components/layouts/Layout'
 export const config = { amp: true }
 
 const PostLink = props => (
@@ -14,20 +15,21 @@ const PostLink = props => (
 
 const Page = ({ data, cards }) => {
   return (
-    <div>
+    <Layout>
       <PostLink id="hello-nextjs" />
       <PostLink id="learn-nextjs" />
       <PostLink id="deploy-nextjs" />
       <AmpCarousel data={data} />
       <AmpEagle items={cards} />
       <AmpCards cards={cards} />
-    </div>
+    </Layout>
   )
 }
 
 Page.getInitialProps = async function(context) {
   const cards = [
     {
+      id: '1',
       title: 'Office Tour: Studio Serif more text here to wrap',
       image: 'studio-310px',
       category: 'Design',
@@ -36,6 +38,7 @@ Page.getInitialProps = async function(context) {
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
     {
+      id: '2',
       title: 'Office Tour: Studio Serif more text here to wrap',
       image: 'studio-310px',
       category: 'Design',
@@ -44,6 +47,7 @@ Page.getInitialProps = async function(context) {
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
     {
+      id: '3',
       title: 'Office Tour: Studio Serif',
       image: 'studio-310px',
       category: 'Design',
@@ -52,6 +56,7 @@ Page.getInitialProps = async function(context) {
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
     {
+      id: '4',
       title: 'Office Tour: Studio Serif',
       image: 'studio-310px',
       category: 'Design',
@@ -60,6 +65,7 @@ Page.getInitialProps = async function(context) {
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
     {
+      id: '5',
       title: 'Office Tour: Studio Serif',
       image: 'studio-310px',
       category: 'Design',

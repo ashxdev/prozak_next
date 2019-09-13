@@ -1,4 +1,4 @@
-import css from "styled-jsx/css"
+import css from 'styled-jsx/css'
 
 export default css.global`
 html {
@@ -1813,6 +1813,10 @@ p {
     width: auto
   }
 
+  .primary-color {
+    background-color: #ffca9f
+  }
+
   .land-see-hero-button {
     border-color: #021425
   }
@@ -1969,6 +1973,22 @@ p {
 
 .ampstart-sidebar .ampstart-nav-dropdown .ampstart-dropdown-item,.land-see-blockquote p,.land-see-story-detail .land-see-hero-caption,.land-see-story-detail .land-see-hero-title {
   color: #021425
+}
+
+.sidebar-trigger {
+  background: transparent;
+  border: 0;
+  outline: none;
+  padding: 15px 20px;
+  cursor: pointer;
+  font-size: 22px;
+}
+
+.sidebar {
+  background-color: #fff;
+  color: #333;
+  min-width: 250px;
+  width: 250px;
 }
 
 .land-see-story-detail .land-see-hero-caption {

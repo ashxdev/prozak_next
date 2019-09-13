@@ -87,7 +87,14 @@ const format = time => {
 }
 
 const RelativeTime = ({ timeStamp }) => {
-  return <span>{format(timeStamp)}</span>
+  return (
+    <span>
+      <i className="main-color material-icons land-see-hero-caption">
+        access_time
+      </i>
+      {format(timeStamp)}
+    </span>
+  )
 }
 
 export default RelativeTime

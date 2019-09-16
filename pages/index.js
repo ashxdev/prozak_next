@@ -3,7 +3,6 @@ import AmpCarousel from '../components/amp/carousel'
 import AmpCards from '../components/amp/cards'
 import AmpEagle from '../components/amp/eagle'
 import Layout from '../components/layouts/Layout'
-export const config = { amp: true }
 
 const PostLink = props => (
   <li>
@@ -101,4 +100,5 @@ Page.getInitialProps = async function(context) {
   return { data, cards }
 }
 
+export const config = { amp: true }
 export default Page

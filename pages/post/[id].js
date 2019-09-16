@@ -21,4 +21,5 @@ class Post extends Component {
   }
 }
 
+export const config = { amp: true }
 export default Post

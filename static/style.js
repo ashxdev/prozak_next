@@ -1975,6 +1975,12 @@ p {
   color: #021425
 }
 
+.ampstart-dropdown-item {
+  font: 410 .9375rem/2.5rem Inconsolata,verdana,sans-serif;
+  text-transform: uppercase;
+  letter-spacing: normal;
+}
+
 .sidebar-trigger {
   background: transparent;
   border: 0;

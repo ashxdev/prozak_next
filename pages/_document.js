@@ -21,6 +21,11 @@ class MyDocument extends Document {
             custom-element="amp-sidebar"
             src="https://cdn.ampproject.org/v0/amp-sidebar-0.1.js"
           ></script>
+          <script
+            async
+            custom-element="amp-accordion"
+            src="https://cdn.ampproject.org/v0/amp-accordion-0.1.js"
+          ></script>
           <link
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"

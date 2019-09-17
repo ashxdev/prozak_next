@@ -1,8 +1,8 @@
-import Head from "next/head"
-import AmpCarouselItem from "./AmpCarouselItem"
+import Head from 'next/head'
+import AmpCarouselItem from './AmpCarouselItem'
 
 const AmpCarousel = props => (
-  <div className="land-see-hero-main mx-auto">
+  <section className="land-see-hero-main mx-auto">
     <Head>
       <script
         async
@@ -25,17 +25,17 @@ const AmpCarousel = props => (
         <AmpCarouselItem {...post} key={post.id} />
       ))}
     </amp-carousel>
-  </div>
+  </section>
 )
 
 AmpCarousel.defaultProps = {
   data: [
     {
-      id: "",
-      postUrl: "",
-      title: "",
-      description: "",
-      imgSrc: "https://unsplash.it/500/400",
+      id: '',
+      postUrl: '',
+      title: '',
+      description: '',
+      imgSrc: 'https://unsplash.it/500/400',
     },
   ],
 }

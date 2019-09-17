@@ -9,7 +9,7 @@ const Card = ({ card }) => {
             width={409}
             height={305}
             layout="responsive"
-            src={`/static/img/land-see/${card.image}.jpg`}
+            src={card.image}
             alt={card.title}
             className="land-see-post-image cover"
           ></amp-img>
@@ -25,7 +25,7 @@ const Card = ({ card }) => {
           <a className="text-decoration-none">{card.title}</a>
         </h4>
       </Link>
-      <p className="ampstart-caption pt1 pb3">{card.text}</p>
+      <p className="ampstart-caption pt1 pb3">{card.shortDescription}</p>
     </div>
   )
 }

@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
-import AmpPost from '../../components/amp/post'
+import AmpPost from '../../components/amp/post/AmpPost'
 import Layout from '../../components/layouts/Layout'
 
 @inject('postStore')

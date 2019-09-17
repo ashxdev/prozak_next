@@ -9,13 +9,13 @@ const eagleItem = ({ item }) => {
           width={409}
           height={305}
           layout="responsive"
-          src={`/static/img/land-see/${item.image}.jpg`}
+          src={item.image}
           alt={item.title}
           className="cover"
         ></amp-img>
       </div>
       <div>
-        <Link href="/">
+        <Link href="/post/[id]" as={`/post/${item.id}`}>
           <a>
             <h4 className="land-see-post-title ampstart-title-sm">
               {item.title}
@@ -29,9 +29,9 @@ const eagleItem = ({ item }) => {
           </a>
         </div>
 
-        <p className="ampstart-caption pt1 pb3">{item.text}</p>
+        <p className="ampstart-caption pt1 pb3">{item.shortDescription}</p>
 
-        <RelativeTime timeStamp={item.timeStamp} />
+        <RelativeTime timeStamp={item.publicationDate} />
       </div>
     </div>
   )

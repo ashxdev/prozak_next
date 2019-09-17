@@ -1,7 +1,7 @@
 import Link from 'next/link'
-import AmpCarousel from '../components/amp/carousel'
-import AmpCards from '../components/amp/cards'
-import AmpEagle from '../components/amp/eagle'
+import AmpCarousel from '../components/amp/carousel/AmpCarousell'
+import AmpCards from '../components/amp/cards/AmpCards'
+import AmpEagle from '../components/amp/eagle/AmpEagle'
 import Layout from '../components/layouts/Layout'
 
 const PostLink = props => (
@@ -12,12 +12,14 @@ const PostLink = props => (
   </li>
 )
 
-const Page = ({ data, cards }) => {
+const Page = ({ data, cards, news }) => {
   return (
     <Layout>
-      <PostLink id="hello-nextjs" />
-      <PostLink id="learn-nextjs" />
-      <PostLink id="deploy-nextjs" />
+      <ul>
+        <PostLink id="hello-nextjs" />
+        <PostLink id="learn-nextjs" />
+        <PostLink id="deploy-nextjs" />
+      </ul>
       <AmpCarousel data={data} />
       <AmpEagle items={cards} />
       <AmpCards cards={cards} />
@@ -29,47 +31,30 @@ Page.getInitialProps = async function(context) {
   const cards = [
     {
       id: '1',
-      title: 'Office Tour: Studio Serif more text here to wrap',
-      image: 'studio-310px',
+      title: 'Use AMP to build great experiences across the web',
+      image:
+        'http://prozak.local/var/prozak/storage/images/media/images/google-amp22/394441-1-ukr-UA/Google-AMP2.jpg',
       category: 'Design',
-      timeStamp: 1568127930062,
-      text:
-        'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
+      publicationDate: '1568709660000',
+      shortDescription:
+        'Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:',
     },
     {
       id: '2',
       title: 'Office Tour: Studio Serif more text here to wrap',
-      image: 'studio-310px',
+      image: '/static/img/land-see/studio-310px.jpg',
       category: 'Design',
-      timeStamp: 1568126906250,
-      text:
+      publicationDate: '1568709660000',
+      shortDescription:
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
     {
       id: '3',
-      title: 'Office Tour: Studio Serif',
-      image: 'studio-310px',
+      title: 'Office Tour: Some another kind of news',
+      image: '/static/img/land-see/studio-310px.jpg',
       category: 'Design',
-      timeStamp: 1568126916250,
-      text:
-        'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
-    },
-    {
-      id: '4',
-      title: 'Office Tour: Studio Serif',
-      image: 'studio-310px',
-      category: 'Design',
-      timeStamp: 1568127106250,
-      text:
-        'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
-    },
-    {
-      id: '5',
-      title: 'Office Tour: Studio Serif',
-      image: 'studio-310px',
-      category: 'Design',
-      timeStamp: 1567116906250,
-      text:
+      publicationDate: '1568709660000',
+      shortDescription:
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },
   ]
@@ -97,7 +82,21 @@ Page.getInitialProps = async function(context) {
     },
   ]
 
-  return { data, cards }
+  const news = [
+    {
+      title: 'Use AMP to build great experiences across the web',
+      image:
+        'http://prozak.local/var/prozak/storage/images/media/images/google-amp22/394441-1-ukr-UA/Google-AMP2.jpg',
+      url: 'http://prozak.local/content/view/full/55105',
+      publicationDate: '1568709660',
+      shortDescription:
+        '<p>Whether you are a publisher, e-commerce company, storyteller, advertiser or email sender, AMP makes it easy to create great experiences on the web. Use AMP to build:</p>',
+      description:
+        '<a name="eztoc394432_1" id="eztoc394432_1"></a><h2>\nWhat is<br />AMP?</h2><a name="eztoc394432_1_0_0_0_1" id="eztoc394432_1_0_0_0_1"></a><h6>Web pages that are compelling, smooth, and load near instantaneously</h6><p>AMP is a simple and robust format to ensure your website is fast, user-first, and makes money. AMP provides long-term success for your web strategy with distribution across popular platforms and reduced operating and development costs.</p>\n<div class="">    <a href="/prozak_api/content/view/full/55106">Google-AMP2</a></div><p>asdasda sdetest test image</p>',
+    },
+  ]
+
+  return { data, cards, news }
 }
 
 export const config = { amp: true }

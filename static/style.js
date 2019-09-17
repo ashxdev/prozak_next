@@ -1227,6 +1227,10 @@ canvas {
   z-index: 4
 }
 
+.primary-color {
+  background-color: rgb(252, 113, 0);
+}
+
 .border {
   border-style: solid;
   border-width: 1px
@@ -1811,10 +1815,6 @@ p {
 
   .land-see-hero-caption {
     width: auto
-  }
-
-  .primary-color {
-    background-color: #ffca9f
   }
 
   .land-see-hero-button {

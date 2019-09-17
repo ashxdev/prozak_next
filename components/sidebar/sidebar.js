@@ -7,7 +7,6 @@ const categories = [
 ]
 
 const Sidebar = () => {
-  const sectionProps = { expanded: true }
   return (
     <amp-sidebar
       id="sidebar"
@@ -17,6 +16,19 @@ const Sidebar = () => {
       <button on="tap:sidebar.toggle" className="sidebar-trigger">
         ✕
       </button>
+
+      <Link href="/">
+        <a className="text-decoration-none inline-block mr-auto ampstart-headerbar-home-link">
+          <amp-img
+            width={44}
+            height={83}
+            layout="fixed"
+            src={`/static/images/prozak_logo_mobile.png`}
+            alt="Prozak"
+            className="cover"
+          />
+        </a>
+      </Link>
 
       <amp-accordion>
         <section expanded="">
@@ -43,8 +55,10 @@ const Sidebar = () => {
 
       <h2>Контакти</h2>
       <style jsx>{`
-        a, a:active, a:visited {
-          color rgb(2, 20, 37);
+        a,
+        a:active,
+        a:visited {
+          color: rgb(2, 20, 37);
         }
       `}</style>
     </amp-sidebar>

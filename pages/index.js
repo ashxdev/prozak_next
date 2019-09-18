@@ -2,6 +2,7 @@ import Link from 'next/link'
 import AmpCarousel from '../components/amp/carousel/AmpCarousell'
 import AmpCards from '../components/amp/cards/AmpCards'
 import AmpEagle from '../components/amp/eagle/AmpEagle'
+import AmpEagleHard from '../components/amp/eagle/AmpEagleHard'
 import Layout from '../components/layouts/Layout'
 
 const PostLink = props => (

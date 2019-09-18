@@ -1003,6 +1003,11 @@ canvas {
   display: flex
 }
 
+.inline-flex {
+  display: -ms-inline-flexbox;
+  display: inline-flex
+}
+
 @media (min-width:40.06rem) {
   .sm-flex {
     display: -ms-flexbox;
@@ -1513,8 +1518,14 @@ p {
 .land-see-post-featured {
   width: 100%
 }
+.section-list {
+  column-count: 1;
+}
 
 @media (min-width:30.06rem) {
+  .section-list {
+    column-count: 2;
+  }
   .land-see-post-featured {
     width: 50%
   }

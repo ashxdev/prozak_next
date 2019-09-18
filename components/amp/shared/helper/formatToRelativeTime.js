@@ -65,6 +65,8 @@ const getPluralKey = number => {
 }
 
 export default time => {
+  time = parseFloat(time)
+
   const timePassed = Date.now() - time
   const daysPassed = Math.round(timePassed / (24 * 60 * 60 * 1000))
 

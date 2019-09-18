@@ -44,7 +44,7 @@ Page.getInitialProps = async function(context) {
       title: 'Office Tour: Studio Serif more text here to wrap',
       image: '/static/img/land-see/studio-310px.jpg',
       category: 'Design',
-      publicationDate: '1568709660000',
+      publicationDate: '1568797531490',
       shortDescription:
         'In the heart of the southeast, Studio Serif stands out among its competitors for its complex mixture of hand-drawn and computer-generated art coming together in beautifully, cohesive designs.',
     },

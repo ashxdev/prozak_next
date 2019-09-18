@@ -7,7 +7,7 @@ const Cards = ({ cards }) => {
         {cards.map(card => (
           <li
             key={card.id}
-            className="px1 mt1 block align-top land-see-post-item land-see-post-item-wide land-see-post-featured col land-see-recent"
+            className="px1 mt1 inline-flex align-top land-see-post-item land-see-post-item-wide"
           >
             <AmpCard card={card} />
           </li>

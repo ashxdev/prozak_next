@@ -26,7 +26,6 @@ const Footer = () => (
           text-transform: uppercase;
           margin: 0 0 20px 0;
         }
-
         .bg-squares {
           background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAYAAAAGCAYAAADgzO9IAAAACXBIW…PlXVlTQPww10AOpX3JKVLqDm6YHEo/yHHGBTkGnn3nPwCBRyqAci2O5wAAAABJRU5ErkJggg==);
         }

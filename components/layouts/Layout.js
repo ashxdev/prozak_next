@@ -6,7 +6,7 @@ import Sidebar from '../sidebar/sidebar'
 const Layout = props => {
   return (
     <div className="site-wrapper">
-      <Sidebar />
+      <Sidebar menu={props.menu} />
       <InfoHeader />
       <Header />
       <div className="body-container">{props.children}</div>

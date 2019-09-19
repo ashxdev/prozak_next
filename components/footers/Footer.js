@@ -11,7 +11,7 @@ const Footer = () => (
       <p>Prozak - Інформаційний антидепресант</p>
       <p>+38 095 308 8778</p>
       <a href="mailto:mail.prozak@gmail.com">mail.prozak@gmail.com</a>
-      <div class="clear"></div>
+      <div className="clear"></div>
     </div>
     <Link href="/">
       <a style={linkStyle}>Copyrights</a>

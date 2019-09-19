@@ -1,12 +1,6 @@
 import Link from 'next/link'
 
-const categories = [
-  { id: '1', title: 'Головні новини' },
-  { id: '2', title: 'Гарячі новини' },
-  { id: '3', title: 'Термінові новини' },
-]
-
-const Sidebar = () => {
+const Sidebar = ({ menu }) => {
   return (
     <amp-sidebar
       id="sidebar"
@@ -30,25 +24,28 @@ const Sidebar = () => {
         </a>
       </Link>
 
-      <amp-accordion>
-        <section expanded="">
-          <h2>Категорії</h2>
-          <ul className="ampstart-dropdown-items list-reset m0 p0">
-            {categories.map(cat => {
-              return (
-                <li key={cat.id} className="ampstart-dropdown-item">
-                  <Link href="/post/[id]" as={`/post/${cat.id}`}>
-                    <a className="text-decoration-none">{cat.title}</a>
-                  </Link>
-                </li>
-              )
-            })}
-          </ul>
-        </section>
-        <section>
-          <h2>Категорії2</h2>
-          <p>Лорем іпсум</p>
-        </section>
+      <amp-accordion expand-single-section="">
+        {menu.map((category, index) => {
+          return (
+            <section key={category.id} expanded={!index && ''}>
+              <h2>{category.title}</h2>
+              <div>
+                {category.subMenu.map(subMenu => {
+                  return (
+                    <p key={subMenu.id} className="ampstart-dropdown-item">
+                      <Link
+                        href="/category/[id]"
+                        as={`/category/${subMenu.id}`}
+                      >
+                        <a className="text-decoration-none">{subMenu.title}</a>
+                      </Link>
+                    </p>
+                  )
+                })}
+              </div>
+            </section>
+          )
+        })}
       </amp-accordion>
 
       <h2>Про нас</h2>

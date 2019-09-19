@@ -1,8 +1,11 @@
 export const api = {
-  url: () => `http://localhost/api/v1/`,
+  url: () => `http://prozak.local/prozak_api/api_content/`,
   points: {
+    settings: {
+      get: () => 'get_settings',
+    },
     posts: {
-      get: () => "posts",
+      get: () => 'posts',
     },
     post: {
       get: uuid => `post/${uuid}`,

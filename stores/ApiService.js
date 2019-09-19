@@ -1,5 +1,5 @@
-import axios from "axios"
-import { apiStringify, api } from "../config/api-settings"
+import axios from 'axios'
+import { apiStringify, api } from '../config/api-settings'
 
 class ApiService {
   constructor(serviceName) {
@@ -14,13 +14,13 @@ class ApiService {
   }
 
   async call({
-    uuid = "",
+    uuid = '',
     data = null,
     headers = {},
     params = null,
-    method = "get",
-    action = "get",
-    responseType = "",
+    method = 'get',
+    action = 'get',
+    responseType = '',
   }) {
     try {
       const result = await axios({
@@ -29,7 +29,7 @@ class ApiService {
         params,
         headers,
         responseType,
-        url: api.url + api.points[this.serviceName][action](uuid),
+        url: api.url() + api.points[this.serviceName][action](uuid),
       })
 
       if (result.status === 200) {

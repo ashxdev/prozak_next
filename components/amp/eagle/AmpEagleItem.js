@@ -24,9 +24,11 @@ const eagleItem = ({ item }) => {
         </Link>
 
         <div className="clear">
-          <a className="land-see-post-category land-see-page-navigation pt1 underline caps">
-            {item.categoryName}
-          </a>
+          <Link href="/category/[id]" as={`${item.categoryUrl}`}>
+            <a className="land-see-post-category land-see-page-navigation pt1 underline caps">
+              {item.categoryName}
+            </a>
+          </Link>
         </div>
 
         <div

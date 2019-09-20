@@ -16,7 +16,7 @@ const eagleItem = ({ item }) => {
       </div>
       <div>
         <Link href="/post/[id]" as={`/post/${item.id}`}>
-          <a>
+          <a className="text-decoration-none">
             <h4 className="land-see-post-title ampstart-title-sm">
               {item.title}
             </h4>
@@ -25,11 +25,14 @@ const eagleItem = ({ item }) => {
 
         <div className="clear">
           <a className="land-see-post-category land-see-page-navigation pt1 underline caps">
-            {item.category}
+            {item.categoryName}
           </a>
         </div>
 
-        <p className="ampstart-caption pt1 pb3">{item.shortDescription}</p>
+        <div
+          className="ampstart-caption pt1 pb3"
+          dangerouslySetInnerHTML={{ __html: item.shortDescription }}
+        />
 
         <RelativeTime timeStamp={item.publicationDate} />
       </div>

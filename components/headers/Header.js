@@ -4,7 +4,7 @@ const Header = () => (
   <div className="ampstart-headerbar sticky flex primary-color justify-between items-center">
     <Link href="/">
       <a className="text-decoration-none">
-        <h3 className="white land-see-post-title ampstart-title-sm">
+        <h3 className="white header-text land-see-post-title">
           Prozak.info - Інформаційний антидепресант
         </h3>
       </a>
@@ -17,15 +17,6 @@ const Header = () => (
       ☰
     </button>
     <style jsx>{`
-      .ampstart-headerbar {
-        color: rgb(250, 250, 250);
-        z-index: 11;
-        top: 0;
-        left: 0;
-        right: 0;
-        padding-left: 1rem;
-        padding-right: 2.5rem;
-      }
       .sticky {
         position: -webkit-sticky;
         position: sticky;

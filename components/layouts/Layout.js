@@ -11,11 +11,6 @@ const Layout = props => {
       <Header />
       <div className="body-container">{props.children}</div>
       <Footer />
-      <style jsx>{`
-        body-container {
-          margin-top: 60px;
-        }
-      `}</style>
     </div>
   )
 }

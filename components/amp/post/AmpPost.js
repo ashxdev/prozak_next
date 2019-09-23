@@ -24,7 +24,7 @@ const Post = ({ article }) => {
         <amp-social-share type="email" width="45" height="33" />
       </div>
       <h1>{article.title}</h1>
-      <div className="pt2">
+      <div className="py2">
         <RelativeTime timeStamp={article.publicationDate} />
       </div>
       <div dangerouslySetInnerHTML={{ __html: article.description }} />

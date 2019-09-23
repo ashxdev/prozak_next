@@ -17,15 +17,15 @@ const eagleItem = ({ item }) => {
       <div>
         <Link href="/post/[id]" as={`/post/${item.id}`}>
           <a className="text-decoration-none">
-            <h4 className="land-see-post-title ampstart-title-sm">
+            <h4 className="land-see-post-title ampstart-title-sm m0">
               {item.title}
             </h4>
           </a>
         </Link>
 
-        <div className="clear">
+        <div className="clear category">
           <Link href="/category/[id]" as={`${item.categoryUrl}`}>
-            <a className="land-see-post-category land-see-page-navigation pt1 underline caps">
+            <a className="land-see-page-navigation pt1 caps">
               {item.categoryName}
             </a>
           </Link>
@@ -38,6 +38,17 @@ const eagleItem = ({ item }) => {
 
         <RelativeTime timeStamp={item.publicationDate} />
       </div>
+      <style jsx>{`
+        .category {
+          clear: left;
+        }
+        .category a {
+          font-size: 1rem;
+          color: #555;
+          padding: 2px 6px;
+          border-radius: 3px;
+        }
+      `}</style>
     </div>
   )
 }

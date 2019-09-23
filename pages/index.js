@@ -26,12 +26,13 @@ class Page extends Component {
   }
 
   render() {
-    const { data, settings, posts } = this.props
+    const { data, settings, posts: allPosts } = this.props
+    const [p1, p2, p3, p4, ...posts] = allPosts
 
     return (
       <Layout {...settings}>
         <Meta />
-        <AmpCarousel data={data} />
+        <AmpCarousel data={[p1, p2, p3, p4]} />
         <AmpEagle items={posts} />
         <AmpCards cards={posts} />
       </Layout>

@@ -1,6 +1,13 @@
 import css from 'styled-jsx/css'
 
 export default css.global`
+.primary {
+    color: #fc7100;
+  }
+
+  .white {
+    color: #ffffff;
+  }
 html {
   font-family: sans-serif;
   line-height: 1.15;
@@ -1714,8 +1721,8 @@ p {
 }
 
 .land-see-hero-typography {
-  bottom: -4%;
-  left: 50%;
+  top: 50%;
+    left: 50%;
   transform: translate(-50%,-50%)
 }
 
@@ -1835,8 +1842,9 @@ p {
   }
 
   .land-see-hero-title {
-    font-weight: 600;
-    font-size: 2.8125rem
+    font-weight: 300;
+    font-size: 1.3125rem;
+    line-height: 1;
   }
 
   .land-see-hero-caption {
@@ -1856,11 +1864,12 @@ p {
   }
 
   .land-see-hero-typography {
-    max-width: 300px;
-    margin-top: 32px;
-    bottom: auto;
-    left: auto;
-    transform: none
+      font-size: 13px;
+      max-width: 350px;
+      margin-top: 10px;
+      top: 0;
+      left: 20%;
+      transform: none;
   }
 
   .land-see-hero-progress {

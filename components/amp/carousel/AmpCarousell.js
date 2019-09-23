@@ -2,7 +2,7 @@ import Head from 'next/head'
 import AmpCarouselItem from './AmpCarouselItem'
 
 const AmpCarousel = props => (
-  <section className="land-see-hero-main mx-auto">
+  <section className="land-see-hero-main1 mx-auto">
     <Head>
       <script
         async
@@ -12,7 +12,6 @@ const AmpCarousel = props => (
     </Head>
     <amp-carousel
       className="land-see-hero-carousel mx-auto"
-      media="(min-width: 40.06rem)"
       width="1290"
       height="680"
       layout="responsive"
@@ -22,7 +21,7 @@ const AmpCarousel = props => (
       type="slides"
     >
       {props.data.map(post => (
-        <AmpCarouselItem {...post} key={post.id} />
+        <AmpCarouselItem post={post} key={post.id} />
       ))}
     </amp-carousel>
   </section>
@@ -35,7 +34,7 @@ AmpCarousel.defaultProps = {
       postUrl: '',
       title: '',
       description: '',
-      imgSrc: 'https://unsplash.it/500/400',
+      image: 'https://unsplash.it/500/400',
     },
   ],
 }

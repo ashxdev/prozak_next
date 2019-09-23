@@ -5,7 +5,7 @@ const linkStyle = {
 }
 
 const Footer = () => (
-  <footer className="bg-squares text">
+  <footer className="bg-squares text p2">
     <h3 className="widget-title">Про нас</h3>
     <div>
       <p>Prozak - Інформаційний антидепресант</p>

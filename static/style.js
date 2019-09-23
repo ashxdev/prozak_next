@@ -233,6 +233,10 @@ canvas {
   font-size: .9375rem
 }
 
+.header-text {
+  color: white
+}
+
 .font-family-inherit {
   font-family: inherit
 }
@@ -818,6 +822,7 @@ canvas {
   width: 100%
 }
 
+
 @media (min-width:40.06rem) {
   .sm-col {
     float: left;
@@ -1299,6 +1304,15 @@ canvas {
   width: 1px;
   overflow: hidden;
   clip: rect(1px,1px,1px,1px)
+}
+
+.ampstart-headerbar {
+  z-index: 11;
+  top: 0;
+  left: 0;
+  right: 0;
+  padding-left: 1rem;
+  padding-right: 2.5rem;
 }
 
 @media (max-width:40rem) {

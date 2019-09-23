@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import Layout from '../../components/layouts/Layout'
 import AmpEagle from '../../components/amp/eagle/AmpEagle'
+import Meta from '../../components/heads/Meta'
 
 @inject('postStore')
 @inject('uiStore')
@@ -24,14 +25,20 @@ class Post extends Component {
 
     const categoryName = flatMenu.find(item => item.id === query.id).title
 
-    return { posts, settings, categoryName }
+    const meta = {
+      title: categoryName,
+      keywords: categoryName,
+    }
+
+    return { posts, settings, categoryName, meta }
   }
 
   render() {
-    const { posts, settings, categoryName } = this.props
+    const { posts, settings, categoryName, meta } = this.props
 
     return (
       <Layout {...settings}>
+        <Meta {...meta} />
         <h1 className="center land-see-post-category land-see-page-navigation pt1 caps">
           {categoryName}
         </h1>

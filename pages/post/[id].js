@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
 import AmpPost from '../../components/amp/post/AmpPost'
 import Layout from '../../components/layouts/Layout'
+import Meta from '../../components/heads/Meta'
 
 @inject('postStore')
 @inject('uiStore')
@@ -18,14 +19,21 @@ class Post extends Component {
       postStore: { article },
     } = mobxStore
 
-    return { article, settings }
+    const meta = {
+      title: article.metaTitle,
+      keywords: article.metaKeywords,
+      description: article.shortDescription,
+    }
+
+    return { article, settings, meta }
   }
 
   render() {
-    const { article, settings } = this.props
+    const { article, settings, meta } = this.props
 
     return (
       <Layout {...settings}>
+        <Meta {...meta} />
         <AmpPost article={article} />
       </Layout>
     )

@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
 import { inject, observer } from 'mobx-react'
+
 import AmpCarousel from '../components/amp/carousel/AmpCarousell'
 import AmpCards from '../components/amp/cards/AmpCards'
 import AmpEagle from '../components/amp/eagle/AmpEagle'
 import Layout from '../components/layouts/Layout'
+import Meta from '../components/heads/Meta'
 
 @inject('uiStore')
 @inject('postStore')
@@ -28,6 +30,7 @@ class Page extends Component {
 
     return (
       <Layout {...settings}>
+        <Meta />
         <AmpCarousel data={data} />
         <AmpEagle items={posts} />
         <AmpCards cards={posts} />

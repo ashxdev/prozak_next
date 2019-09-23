@@ -11,6 +11,11 @@ class MyDocument extends Document {
     return (
       <Html>
         <Head>
+          <link
+            rel="shortcut icon"
+            type="image/x-icon"
+            href="http://prozak.info/extension/prozak/design/prozak/images/favicon.ico"
+          />
           <script
             async
             custom-element="amp-carousel"

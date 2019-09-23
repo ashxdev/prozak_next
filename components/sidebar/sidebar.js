@@ -27,7 +27,7 @@ const Sidebar = ({ menu }) => {
       <amp-accordion expand-single-section="">
         {menu.map((category, index) => {
           return (
-            <section key={category.id} expanded={!index && ''}>
+            <section key={category.id} expanded={!index ? '' : undefined}>
               <h2>{category.title}</h2>
               <div>
                 {category.subMenu.map(subMenu => {

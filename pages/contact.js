@@ -1,6 +1,8 @@
-import Link from "next/link"
+import Link from 'next/link'
+import Meta from '../components/heads/Meta'
 const Contact = () => (
   <div>
+    <Meta />
     <nav>
       <ul>
         <li>

@@ -1734,7 +1734,8 @@ p {
 .land-see-hero-caption {
   font-size: 1rem;
   line-height: 1.11111;
-  opacity: .85
+  opacity: .7;
+  background-color: #fff;
 }
 
 .land-see-hero-button {

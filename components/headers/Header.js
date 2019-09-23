@@ -4,7 +4,9 @@ const Header = () => (
   <div className="ampstart-headerbar sticky flex primary-color justify-between items-center">
     <Link href="/">
       <a className="text-decoration-none">
-        <h3 className="land-see-post-title ampstart-title-sm">Prozak</h3>
+        <h3 className="white land-see-post-title ampstart-title-sm">
+          Prozak.info - Інформаційний антидепресант
+        </h3>
       </a>
     </Link>
     <button

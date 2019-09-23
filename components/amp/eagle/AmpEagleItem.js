@@ -12,7 +12,7 @@ const eagleItem = ({ item }) => {
           src={item.image}
           alt={item.title}
           className="cover"
-        ></amp-img>
+        />
       </div>
       <div>
         <Link href="/post/[id]" as={`/post/${item.id}`}>

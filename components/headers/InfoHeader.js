@@ -1,8 +1,8 @@
 const Header = () => (
   <div className="ampstart-headerbar flex justify-between items-center">
-    <h3>Prozak news site</h3>
-    <h3>Search here</h3>
-    <i className="main-color material-icons land-see-hero-caption">search</i>
+    <h4>Prozak - AMP version</h4>
+    {/*<h3>Search here</h3>
+     <i className="main-color material-icons land-see-hero-caption">search</i> */}
     <style jsx>{`
       .ampstart-headerbar {
         color: rgb(250, 250, 250);
@@ -12,6 +12,7 @@ const Header = () => (
         right: 0;
         padding-left: 1rem;
         padding-right: 2.5rem;
+        height: 28px;
       }
     `}</style>
   </div>

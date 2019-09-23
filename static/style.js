@@ -1511,6 +1511,7 @@ p {
 }
 
 .land-see-post-item-wide {
+  width: 100%;
   max-width: 100%;
   text-align: left
 }

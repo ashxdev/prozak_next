@@ -25,7 +25,15 @@ const Card = ({ card }) => {
           <a className="text-decoration-none">{card.title}</a>
         </h4>
       </Link>
-      <p className="ampstart-caption pt1 pb3">{card.shortDescription}</p>
+      <div
+        className="ampstart-caption pt1 pb3"
+        dangerouslySetInnerHTML={{ __html: card.shortDescription }}
+      />
+      <div className="go-back">
+        <Link href="/">
+          <a>Back to homepage</a>
+        </Link>
+      </div>
     </div>
   )
 }

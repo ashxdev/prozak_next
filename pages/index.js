@@ -6,23 +6,31 @@ import AmpEagle from '../components/amp/eagle/AmpEagle'
 import Layout from '../components/layouts/Layout'
 
 @inject('uiStore')
+@inject('postStore')
 @observer
 class Page extends Component {
   static async getInitialProps({ mobxStore }) {
-    await mobxStore.uiStore.fetchSettings()
+    await Promise.all([
+      mobxStore.uiStore.fetchSettings(),
+      mobxStore.postStore.fetchPosts(),
+    ])
 
-    const { cards, data, settings } = mobxStore.uiStore
+    const {
+      uiStore: { data, settings },
+      postStore: { posts },
+    } = mobxStore
 
-    return { cards, data, settings }
+    return { data, settings, posts }
   }
 
   render() {
-    const { data, cards, settings } = this.props
+    const { data, settings, posts } = this.props
+
     return (
       <Layout {...settings}>
         <AmpCarousel data={data} />
-        <AmpEagle items={cards} />
-        <AmpCards cards={cards} />
+        <AmpEagle items={posts} />
+        <AmpCards cards={posts} />
       </Layout>
     )
   }

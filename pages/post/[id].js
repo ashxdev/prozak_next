@@ -4,18 +4,29 @@ import AmpPost from '../../components/amp/post/AmpPost'
 import Layout from '../../components/layouts/Layout'
 
 @inject('postStore')
+@inject('uiStore')
 @observer
 class Post extends Component {
   static async getInitialProps({ mobxStore, query }) {
-    await mobxStore.postStore.fetch(query.id)
-    return { post: mobxStore.postStore.post }
+    await Promise.all([
+      mobxStore.uiStore.fetchSettings(),
+      mobxStore.postStore.fetchArticle(query.id),
+    ])
+
+    const {
+      uiStore: { settings },
+      postStore: { article },
+    } = mobxStore
+
+    return { article, settings }
   }
 
   render() {
-    const { post } = this.props
+    const { article, settings } = this.props
+
     return (
-      <Layout>
-        <AmpPost post={post} />
+      <Layout {...settings}>
+        <AmpPost article={article} />
       </Layout>
     )
   }

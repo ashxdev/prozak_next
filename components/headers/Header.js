@@ -1,6 +1,12 @@
+import Link from 'next/link'
+
 const Header = () => (
   <div className="ampstart-headerbar sticky flex primary-color justify-between items-center">
-    <h3>Prozak</h3>
+    <Link href="/">
+      <a className="text-decoration-none">
+        <h3 className="land-see-post-title ampstart-title-sm">Prozak</h3>
+      </a>
+    </Link>
     <button
       on="tap:sidebar.toggle"
       aria-label="open sidebar"

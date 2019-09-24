@@ -1,9 +1,10 @@
 import Link from 'next/link'
+import RelativeTime from '../shared/RelativeTime'
 
 const Card = ({ card }) => {
   return (
     <div>
-      <Link href="/">
+      <Link href="/post/[id]" as={`/post/${card.id}`}>
         <a className="text-decoration-none">
           <amp-img
             width={409}
@@ -15,12 +16,13 @@ const Card = ({ card }) => {
           ></amp-img>
         </a>
       </Link>
-      <Link href="/">
+
+      <Link href="/category/[id]" as={`${card.categoryUrl}`}>
         <a className="land-see-post-category land-see-page-navigation inline-block pt1 underline caps">
-          {card.category}
+          {card.categoryName}
         </a>
       </Link>
-      <Link href="/">
+      <Link href="/post/[id]" as={`/post/${card.id}`}>
         <h4 className="land-see-post-title ampstart-title-sm pt1">
           <a className="text-decoration-none">{card.title}</a>
         </h4>
@@ -31,9 +33,10 @@ const Card = ({ card }) => {
       />
       <div className="go-back">
         <Link href="/">
-          <a>Back to homepage</a>
+          <a>На головну</a>
         </Link>
       </div>
+      <RelativeTime timeStamp={card.publicationDate} />
     </div>
   )
 }

@@ -18,15 +18,15 @@ class Page extends Component {
     ])
 
     const {
-      uiStore: { data, settings },
-      postStore: { posts },
+      uiStore: { settings },
+      postStore: { posts, cardsPosts },
     } = mobxStore
 
-    return { data, settings, posts }
+    return { settings, posts, cardsPosts }
   }
 
   render() {
-    const { data, settings, posts: allPosts } = this.props
+    const { settings, posts: allPosts, cardsPosts } = this.props
     const [p1, p2, p3, p4, ...posts] = allPosts
 
     return (
@@ -34,7 +34,7 @@ class Page extends Component {
         <Meta />
         <AmpCarousel data={[p1, p2, p3, p4]} />
         <AmpEagle items={posts} />
-        <AmpCards cards={posts} />
+        <AmpCards cards={cardsPosts} />
       </Layout>
     )
   }

@@ -1,5 +1,4 @@
 import Document, { Html, Head, Main, NextScript } from 'next/document'
-import globalStyles from '../static/style'
 
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
@@ -35,9 +34,6 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
           />
-          <style jsx global>
-            {globalStyles}
-          </style>
         </Head>
         <body>
           <Main />

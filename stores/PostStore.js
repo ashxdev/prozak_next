@@ -2,6 +2,7 @@ import { observable, action } from 'mobx'
 import ApiService from './ApiService'
 class PostStore {
   @observable posts = null
+  @observable cardsPosts = null
   @observable article = null
 
   constructor() {
@@ -15,7 +16,13 @@ class PostStore {
       params: { parent_id: parentId },
     })
 
+    const nextResponse = await this.ApiService.call({
+      action: this.apiMethods.get,
+      params: { parent_id: parentId, offset: 10 },
+    })
+
     this.setPosts(response)
+    this.setNextPosts(nextResponse)
   }
 
   async fetchArticle(id) {
@@ -29,6 +36,10 @@ class PostStore {
 
   @action setPosts({ posts }) {
     this.posts = posts
+  }
+
+  @action setNextPosts({ posts }) {
+    this.cardsPosts = posts
   }
 
   @action setArticle(article) {

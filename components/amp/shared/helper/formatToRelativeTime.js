@@ -2,20 +2,25 @@ const formatedDate = time => {
   const monthStrings = [
     'січня',
     'лютого',
+
     'березня',
     'квітня',
     'травня',
+
+    'червня',
     'липня',
     'серпня',
+
     'вересня',
     'жовтня',
     'листопада',
+
     'грудня',
   ]
 
   const evt = new Date(time)
 
-  return `${evt.getDay()} ${monthStrings[evt.getMonth()]} ${evt.getFullYear()}`
+  return `${evt.getDate()} ${monthStrings[evt.getMonth()]} ${evt.getFullYear()}`
 }
 
 const formatedHours = hoursPassed => {

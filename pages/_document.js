@@ -14,7 +14,7 @@ class MyDocument extends Document {
           <link
             rel="shortcut icon"
             type="image/x-icon"
-            href="http://prozak.info/extension/prozak/design/prozak/images/favicon.ico"
+            href="/static/favicon.ico"
           />
           <script
             async
@@ -35,7 +35,7 @@ class MyDocument extends Document {
             href="https://fonts.googleapis.com/icon?family=Material+Icons"
             rel="stylesheet"
           />
-          <style amp-custom jsx global>
+          <style jsx global>
             {globalStyles}
           </style>
         </Head>

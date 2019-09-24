@@ -16,4 +16,5 @@ const Contact = () => (
   </div>
 )
 
+export const config = { amp: true }
 export default Contact
